@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-// import 'big_app_text.dart';
+import 'big_app_text.dart';
 
 
 class PopularMountains extends StatefulWidget {

@@ -61,7 +61,28 @@ class _PopularMountainsState extends State<PopularMountains>
           const SizedBox(
             height: 30,
           ),
-
+          Container(
+            child: TabBar(
+              controller: _tabController,
+              tabs: [
+                Tab(text:"Places"),
+                Tab(text:"Inspirations"),
+                Tab(text:"Emotions")
+              ],
+            ),
+          ),
+          Container(
+            width: double.maxFinite,
+            height: 300,
+            child: TabBarView(
+              controller: _tabController,
+              children: [
+                Tab(text:"Places"),
+                Tab(text:"Inspirations"),
+                Tab(text:"Emotions")
+              ],
+            ),
+          ),
           const SizedBox(
             height: 30,
           ),

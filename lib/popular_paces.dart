@@ -62,24 +62,87 @@ class _PopularMountainsState extends State<PopularMountains>
             height: 30,
           ),
           Container(
-            child: TabBar(
-              controller: _tabController,
-              tabs: [
-                Tab(text:"Places"),
-                Tab(text:"Inspirations"),
-                Tab(text:"Emotions")
-              ],
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: TabBar(
+                controller: _tabController,
+                isScrollable: true,
+                padding: const EdgeInsets.only(left:20,right: 20 ),
+                labelColor: Colors.black,
+                unselectedLabelColor: Colors.grey,
+                indicator: CircleTabIndicator(color: Colors.black, radius: 4),
+                tabs: [
+                  Tab(text:"Places"),
+                  Tab(text:"Inspirations"),
+                  Tab(text:"Emotions")
+                ],
+              ),
             ),
           ),
           Container(
+            margin: const EdgeInsets.only(left:20),
             width: double.maxFinite,
             height: 300,
             child: TabBarView(
               controller: _tabController,
               children: [
-                Tab(text:"Places"),
-                Tab(text:"Inspirations"),
-                Tab(text:"Emotions")
+                ListView.builder(
+                    itemCount: 3,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (_, index){
+                  return Container(
+                    height: 300,
+                    width: 200,
+                    margin: const EdgeInsets.only(right: 10,top: 10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      image: DecorationImage(
+                        image: AssetImage(
+                          "img/"+images[index]
+                        ),
+                        fit: BoxFit.cover
+                      )
+                    ),
+                  );
+                }),
+                ListView.builder(
+                    itemCount: 3,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (_, index){
+                      return Container(
+                        height: 300,
+                        width: 200,
+                        margin: const EdgeInsets.only(right: 10,top: 10),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    "img/"+images[index]
+                                ),
+                                fit: BoxFit.cover
+                            )
+                        ),
+                      );
+                    }),
+                ListView.builder(
+                    itemCount: 3,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (_, index){
+                      return Container(
+                        height: 300,
+                        width: 200,
+                        margin: const EdgeInsets.only(right: 10,top: 10),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    "img/"+images[index]
+                                ),
+                                fit: BoxFit.cover
+                            )
+                        ),
+                      );
+                    }),
               ],
             ),
           ),
